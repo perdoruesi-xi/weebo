@@ -32,11 +32,13 @@ module Weebo
       data.each do |perform, period|
         text, time = format(perform, period)
         job_id = scheduler(:in, frequency: time) do
-          # https://your_team_name.slack.com/services/new/incoming-webhook
-          # Add a new Incoming WebHooks integration with your account credentials.
-          Weebo::Slacky.new('hook','channel', 'username').say(text)
-        rescue SocketError
-          logger.fatal "Nodename nor servname provided" 
+          begin
+            # Add a new Incoming WebHooks integration with your account credentials.
+            # https://your_team_name.slack.com/services/new/incoming-webhook
+            Weebo::Slacky.new('hook','channel', 'username').say(text)  
+          rescue SocketError => exception
+            logger.fatal "#{exception}"  
+          end
         end
         jobs.push(job_id)
       end
