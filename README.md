@@ -26,7 +26,9 @@ A salah times bot.
 		weebo = Weebo::Bot.new
 		
 		weebo.scheduler(:every, frequency:, '5h') do 
-			# Slack, Skype ..
+			# https://your_team_name.slack.com/services/new/incoming-webhook
+      # Add a new Incoming WebHooks integration with your account credentials.
+      Weebo::Slacky.new('hook','channel', 'username').say(text)
 		end
 
 ## Third-party Adapters
@@ -35,7 +37,7 @@ Here is a list of known adapters, but please submit an issue to have yours added
 
 * [Slack](https://slack.com)
 
-Interested in adding your own adapter? [Say hello](mailto:korab@mozaix.net)
+Interested in adding your own adapter? [Say Hello](mailto:korab@mozaix.net)
 
 ## Contributing
 

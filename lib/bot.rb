@@ -35,6 +35,8 @@ module Weebo
           # https://your_team_name.slack.com/services/new/incoming-webhook
           # Add a new Incoming WebHooks integration with your account credentials.
           Weebo::Slacky.new('hook','channel', 'username').say(text)
+        rescue SocketError
+          logger.fatal "Nodename nor servname provided" 
         end
         jobs.push(job_id)
       end
