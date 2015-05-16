@@ -1,6 +1,6 @@
 require 'rufus-scheduler'
-require_relative "../lib/adapter"
 require_relative "../lib/adapters/slack"
+require_relative "../lib/connection"
 
 module Weebo
   class Bot
