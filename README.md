@@ -19,7 +19,7 @@ A salah times bot.
 		
 		# Weebo Bot
 		weebo = Weebo::Bot.new
-		Weebo.perform
+		weebo.perform
 3. Run ruby client.rb 
 
 ## Add your own integration
