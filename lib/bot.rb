@@ -48,16 +48,11 @@ module Weebo
     def format(perform, period)
       format_perform_txt =
           case perform
-            when "sabahu"
-              "sabahut"
-            when "dreka"
-              "drekës"
-            when "ikindia"
-              "ikindisë"
-            when "akshami"
-              "akshamit"
-            when "jacia"
-              "jacisë"
+            when "sabahu"   then "sabahut"
+            when "dreka"    then "drekës"
+            when "ikindia"  then "ikindisë"
+            when "akshami"  then "akshamit"
+            when "jacia"    then "jacisë"
           end
       text = "Koha e namazit të #{format_perform_txt}".encode!('utf-8')
       time = "#{Time.now.strftime("%Y-%m-%d")} #{period}:00"
