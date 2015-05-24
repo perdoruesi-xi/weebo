@@ -67,7 +67,7 @@ module Weebo
         if block_given?
           yield
         else
-          raise ArgumentError, "block not given" unless block_given?
+          raise ArgumentError, "Block not given"
         end
       end
     end
