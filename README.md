@@ -22,14 +22,12 @@ A salah times bot.
 		weebo.perform
 3. Run ruby client.rb 
 
-## Add your own integration
-		weebo = Weebo::Bot.new
-		
-		weebo.scheduler(:every, frequency:, '5h') do 
-			# https://your_team_name.slack.com/services/new/incoming-webhook
-      # Add a new Incoming WebHooks integration with your account credentials.
-      Weebo::Slacky.new('hook','channel', 'username').say(text)
-		end
+## Add new adapter
+Using lib/default.yml file you can specify all adpaters credentials:
+		slack:
+		  hook: "https://hooks.slack.com/services/T04.."
+		  channel: "#channel"
+		  username: "username"
 
 ## Third-party Adapters
 

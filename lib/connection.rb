@@ -1,5 +1,3 @@
-require 'sqlite3'
-
 module Weebo
   class Connection
     def start_new

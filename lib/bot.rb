@@ -1,5 +1,4 @@
 require 'rufus-scheduler'
-require_relative "../lib/adapters/slack"
 require_relative "../lib/connection"
 
 module Weebo
@@ -33,9 +32,7 @@ module Weebo
         text, time = format(perform, period)
         job_id = scheduler(:in, frequency: time) do
           begin
-            # Add a new Incoming WebHooks integration with your account credentials.
-            # https://your_team_name.slack.com/services/new/incoming-webhook
-            Weebo::Slacky.new('hook','channel', 'username').say(text)  
+            Weebo.publish(text)
           rescue SocketError => exception
             logger.fatal "#{exception}"  
           end

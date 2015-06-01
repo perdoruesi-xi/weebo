@@ -1,9 +1,12 @@
 require 'slack-notifier'
 
 module Weebo
-  class Slacky
-    def initialize(hook, channel, username)
-      @slack ||= Slack::Notifier.new hook, channel: channel, username: username
+  class Slack
+    def initialize(params)
+      @slack ||= Slack::Notifier.new params[:hook]
+
+      @slack.channel = params[:channel]
+      @slack.username = params[:username]
     end
 
     def say(text, color="#3498db")

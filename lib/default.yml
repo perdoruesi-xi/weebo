@@ -1,0 +1,4 @@
+slack:
+  hook: "hook"
+  channel: "#channel"
+  username: "username" 
