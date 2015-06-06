@@ -3,7 +3,7 @@ require 'slack-notifier'
 module Weebo
   class Slack
     def initialize(params)
-      @slack ||= Slack::Notifier.new params[:hook]
+      @slack ||= ::Slack::Notifier.new params[:hook]
 
       @slack.channel = params[:channel]
       @slack.username = params[:username]
