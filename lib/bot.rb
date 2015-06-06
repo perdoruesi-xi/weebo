@@ -34,7 +34,7 @@ module Weebo
           begin
             Weebo.publish(text)
           rescue SocketError => exception
-            logger.fatal "#{exception}"  
+            logger.fatal "#{exception}"
           end
         end
         jobs.push(job_id)

@@ -12,3 +12,6 @@ DEPENDENCIES
   rufus-scheduler
   slack-notifier
   sqlite3
+
+BUNDLED WITH
+   1.10.2

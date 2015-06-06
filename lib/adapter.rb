@@ -2,21 +2,19 @@ require 'yaml'
 
 module Weebo
   class << self
-
     def publish(text)
       # slack:
-      #   hook: ..      
+      #   hook:
       adapters.each do |adptr|
-        raise ArgumentError '#' if config[adptr].values.any?(&:empty?)
+       raise 'Update config.yml params' if config[adptr].values.any?(&:empty?)
 
-        klass = Weebo.const_get(adptr.capitalize)
-        params = config[adptr]
+       klass = Weebo.const_get(adptr.capitalize)
+       params = config[adptr]
+       object = klass.new(params)
 
-        object = klass.new(params)
-
-        if object.respond_to?(:say)
-          object.send(:say, text)
-        end
+       if object.respond_to?(:say)
+         object.send(:say, text)
+       end
       end
     end
 
@@ -28,7 +26,7 @@ module Weebo
       load_yaml_file
     end
 
-    def load_yaml_file(file_name='./lib/default.yml')
+    def load_yaml_file(file_name='./lib/config.yml')
       raw_config = File.open(file_name)
       yaml = YAML::load(raw_config)
 
