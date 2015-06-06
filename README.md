@@ -8,27 +8,28 @@ A salah times bot.
 ## Getting Started
 
 1. Use bundle to install the exact gems and versions that are needed. 
-2. Create client.rb 
+2. Run ``` ruby client.rb ```
+``` ruby
+require_relative "weebo"
+require_relative "lib/bot"
+require_relative "lib/wsample"
+require_relative "lib/adapter"
 
-		require_relative "weebo"
-		require_relative "lib/bot"
-		puts Weebo::VERSION
-		
-		require_relative "lib/wsample"
-		puts "Weebo Bot"
-		
-		# Weebo Bot
-		weebo = Weebo::Bot.new
-		weebo.perform
-3. Run ruby client.rb 
+Dir['lib/adapters/*.rb'].each {|file| require_relative file }
 
-## Add new adapter
-Using lib/default.yml file you can specify all adpaters credentials:
-		slack:
-		  hook: "https://hooks.slack.com/services/T04.."
-		  channel: "#channel"
-		  username: "username"
+# Weebo Bot
+weebo = Weebo::Bot.new
+weebo.perform
+```
 
+## Adapters
+Using lib/config.yml file you can specify all adpaters credentials:
+```
+slack:
+  hook: "https://hooks.slack.com/services/T04.."
+  channel: "#channel"
+  username: "username"
+```
 ## Third-party Adapters
 
 Here is a list of known adapters, but please submit an issue to have yours added to the list:
