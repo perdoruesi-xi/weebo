@@ -6,15 +6,17 @@ module Weebo
       # slack:
       #   hook:
       adapters.each do |adptr|
-       raise 'Update config.yml params' if config[adptr].values.any?(&:empty?)
+        if config.has_key?(adptr)
+          next if config[adptr].values.any?(&:empty?)
 
-       klass = Weebo.const_get(adptr.capitalize)
-       params = config[adptr]
-       object = klass.new(params)
+          klass = Weebo.const_get(adptr.capitalize)
+          params = config[adptr]
+          object = klass.new(params)
 
-       if object.respond_to?(:say)
-         object.send(:say, text)
-       end
+          if object.respond_to?(:say)
+            object.send(:say, text)
+          end
+        end
       end
     end
 

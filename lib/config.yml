@@ -1,4 +1,9 @@
 slack:
-  hook: "hook"
-  channel: "#channel"
-  username: "username" 
+  hook: ""
+  channel: ""
+  username: ""
+
+hipchat:
+  api_token: ""
+  room: ""
+  username: ""
