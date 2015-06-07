@@ -29,12 +29,18 @@ slack:
   hook: "https://hooks.slack.com/services/T04.."
   channel: "#channel"
   username: "username"
+
+hipchat:
+  api_token: ""
+  room: ""
+  username: ""
 ```
 ## Third-party Adapters
 
 Here is a list of known adapters, but please submit an issue to have yours added to the list:
 
 * [Slack](https://slack.com)
+* [HipChat](https://www.hipchat.com)
 
 Interested in adding your own adapter? [Say Hello](mailto:korab@mozaix.net)
 
