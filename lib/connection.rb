@@ -14,6 +14,7 @@ module Weebo
 
     def self.collect_all
       begin
+        fail "Database takvimi.sqlite3 does not exist" unless File.exist?('db/takvimi.sqlite3') 
         db = SQLite3::Database.new "db/takvimi.sqlite3"
         db.results_as_hash = true
         date = Time.now.strftime("%d-%m-%Y")
