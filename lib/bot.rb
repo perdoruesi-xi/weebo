@@ -1,9 +1,11 @@
 require 'rufus-scheduler'
-require 'logger'
-require_relative "../lib/connection"
+require_relative '../lib/connection'
+require_relative 'logging'
 
 module Weebo
   class Bot
+    include Logging
+
     def perform
       call(cron)
     end
@@ -22,7 +24,6 @@ module Weebo
           data = Weebo::Connection.new.start_new
           run.job(process(data))
         rescue Rufus::Scheduler::TimeoutError => exception
-          logger = Logger.new(STDOUT)
           logger.error "Exception: #{exception.message}"
         end
       end

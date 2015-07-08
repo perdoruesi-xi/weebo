@@ -2,6 +2,8 @@ require 'yaml'
 
 module Weebo
   class << self
+    include Logging
+
     def publish(text)
       # slack:
       #   hook:
