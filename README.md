@@ -44,6 +44,9 @@ Here is a list of known adapters, but please submit an issue to have yours added
 
 Interested in adding your own adapter? [Say Hello](mailto:korab@mozaix.net)
 
+## To Do
+- [ ] Emoji
+
 ## Contributing
 
 If there is any thing you'd like to contribute or fix, please:
