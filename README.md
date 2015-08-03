@@ -46,6 +46,7 @@ Interested in adding your own adapter? [Say Hello](mailto:korab@mozaix.net)
 
 ## To Do
 - [ ] Emoji
+- [ ] Telegram Adapter
 
 ## Contributing
 
