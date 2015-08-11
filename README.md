@@ -31,9 +31,15 @@ slack:
   username: "username"
 
 hipchat:
-  api_token: ""
-  room: ""
-  username: ""
+  api_token:
+  room:
+  username:
+
+twitter:
+  consumer_key:
+  consumer_secret:
+  access_token:
+  access_token_secret:
 ```
 ## Third-party Adapters
 
