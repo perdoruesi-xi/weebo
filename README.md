@@ -48,6 +48,7 @@ Here is a list of known adapters, but please submit an issue to have yours added
 * [Slack](https://slack.com)
 * [HipChat](https://www.hipchat.com)
 * [Twitter](https://www.twitter.com)
+
 Interested in adding your own adapter? [Say Hello](mailto:korab@mozaix.net)
 
 ## To Do
