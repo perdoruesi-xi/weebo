@@ -3,9 +3,7 @@ require 'logger'
 module Weebo
   module Logging
     def logger
-      logger = ::Logger.new(STDERR)
-
-      return logger
+      ::Logger.new(STDERR)
     end
   end
 end

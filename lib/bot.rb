@@ -1,5 +1,5 @@
 require 'rufus-scheduler'
-require_relative '../lib/connection'
+require_relative '../lib/database'
 require_relative 'logging'
 
 module Weebo
@@ -21,8 +21,8 @@ module Weebo
       scheduler(:cron, frequency: '0 0 * * *') do
         begin
           puts "#{Time.new.strftime("%m/%d/%Y")}"
-          data = Weebo::Connection.new.start_new
-          run.job(process(data))
+          db = Weebo::Database.new("lib/db.sqlite3")
+          run.job(process(db.load_data))
         rescue Rufus::Scheduler::TimeoutError => exception
           logger.error "Exception: #{exception.message}"
         end
