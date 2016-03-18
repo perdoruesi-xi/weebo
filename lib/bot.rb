@@ -12,7 +12,7 @@ module Weebo
     # |  |  |  |  |
     # 0  0  *  *  *
     def cron
-      scheduler(:cron, frequency: '41 0 * * *') do
+      scheduler(:cron, frequency: '0 0 * * *') do
         begin
           puts "#{Time.new.strftime("%m/%d/%Y")}"
           db = Weebo::Database.new("lib/db.sqlite3")
