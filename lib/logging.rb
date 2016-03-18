@@ -1,5 +1,3 @@
-require 'logger'
-
 module Weebo
   module Logging
     def logger
