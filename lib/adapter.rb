@@ -31,16 +31,7 @@ module Weebo
       raw_config = File.open(file_name)
       yaml = YAML::load(raw_config)
 
-      symbolize_keys(yaml)
-    end
-
-    def symbolize_keys(hash)
-      hash.inject({}) { |res, (k, v)|
-        n_k = k.is_a?(String) ? k.to_sym : k
-        n_v = v.is_a?(Hash) ? symbolize_keys(v) : v
-        res[n_k] = n_v
-        res
-      }
+      Weebo::Util.symbolize_keys(yaml)
     end
   end
 end

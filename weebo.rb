@@ -10,4 +10,5 @@ module Weebo
   autoload :Bot,      './lib/bot'
   autoload :Database, './lib/database'
   autoload :Logging,  './lib/logging'
+  autoload :Util,     './lib/util'
 end
